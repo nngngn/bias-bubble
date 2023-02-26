@@ -15,13 +15,13 @@ This is a site we learned about in my AP Econ class. It analyzes + fact checks a
 2. Click on the extension while reading any article to get a summary and explanation of the accuracy/bias. 
 
 ## How we built it
-By not sleeping. No but actually, we fetched data from the [newscatcher API](https://newscatcherapi.com/) every few minutes with cron jobs and hosted them on dfinity.  Then, I used basic NLP libraries to detect the source of each individual article and run it through my REST API. Finally, I integrated it into the extension, built with simple html and js.
+By not sleeping. No but actually, Bias Bubble was built with data from the [newscatcher API](https://newscatcherapi.com/) every few minutes with cron jobs and hosted it on dfinity.  Then, I used the natural language processing library NLTK to detect the source of each individual article and run it through my python REST API, that links the article source with Media Bias Fact Check to determine its stats. Finally, I integrated it into the extension itself, which was built with html and javascript. 
 
 ## Challenges we ran into
 A lot of things kept breaking. Dfinity: hosting and integrating it with the extension took a while to figure out, and I had issues with manifest being deprecated on basically every version. 
 
 ## Accomplishments that we're proud of
-I'm proud that I created such a usable application with technologies I'd just experimented with before! I genuinely see people integrating this into their browsing, and I have found it really interesting to see the types of articles and viewpoints that are recommended to me.
+I'm proud that I created such a widely usable application with technologies I'd just experimented with before! It was challenging to write so much code at once. I genuinely see people integrating this into their browsing, and I have found it really interesting to see the types of articles and viewpoints that are recommended to me.
 
 ## What's next for Bias Bubble
 I would like to add support for different sites, like Facebook, where a lot of misinformation is spread. Also, it would be great to have BiasBubble on WhatsApp, because I personally know many of my relatives use it to spread false or misleading articles almost every day. Another possible feature is recommending aricles with different stances on the same subject, so users can get a more diverse perspective.
