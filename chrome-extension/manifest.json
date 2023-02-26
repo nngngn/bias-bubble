@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "Bias Bubble",
+  "version": "1.0",
+  
+
+  "description": "Chrome extension that uses news media ratings hosted on  dfinity to check for bias in the news.",
+
+  "icons": {
+    "128": "icons/bias-bubble.png"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/bias-bubble.png",
+    "default_popup": "options.html"
+  },
+
+  "web_accessible_resources": [
+    "sources/sources.json"
+  ],
+
+  "content_scripts": [
+  
+    {
+      "matches": ["*://*.google.com/*"],
+      "js": ["google-bubble.js"]
+    },
+    
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "exclude_matches": ["*://*.google.com/*"],
+      "js": ["misc-bubble.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false    
+  },
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "permissions": ["storage", "http://127.0.0.1:5000/"]
+}
